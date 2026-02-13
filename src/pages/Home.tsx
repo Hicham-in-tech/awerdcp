@@ -28,7 +28,7 @@ const Home: React.FC = () => {
                 onClose={() => setShowNotification(false)}
             />
             {/* Hero Section */}
-            <section className="relative h-screen flex items-center justify-center text-white overflow-hidden perspective-1000">
+            <section className="relative h-[85vh] md:h-[90vh] flex items-center justify-center text-white overflow-hidden perspective-1000">
                 <motion.div 
                     style={{ y: y1 }}
                     className="absolute inset-0 z-0"
@@ -48,30 +48,30 @@ const Home: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         style={{ opacity }}
-                        className="max-w-4xl mx-auto backdrop-blur-sm bg-white/5 p-8 rounded-3xl border border-white/10 shadow-2xl"
+                        className="max-w-4xl mx-auto backdrop-blur-sm bg-white/5 p-6 md:p-8 rounded-3xl border border-white/10 shadow-2xl"
                     >
                         <motion.span 
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.2 }}
-                            className="inline-block py-1 px-3 rounded-full bg-primary-500/20 border border-primary-400/30 text-primary-200 text-sm font-semibold mb-6 tracking-wider uppercase"
+                            className="inline-block py-1 px-3 rounded-full bg-primary-500/20 border border-primary-400/30 text-primary-200 text-xs md:text-sm font-semibold mb-4 md:mb-6 tracking-wider uppercase"
                         >
                             Dakhla-Oued Eddahab
                         </motion.span>
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold mb-6 md:mb-8 leading-tight tracking-tight drop-shadow-lg px-4">
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold mb-4 md:mb-6 leading-tight tracking-tight drop-shadow-lg px-4">
                             {t('hero.title')}
                         </h1>
-                        <p className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 md:mb-10 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md px-4">
+                        <p className="text-base md:text-lg lg:text-xl text-gray-200 mb-6 md:mb-8 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md px-4">
                             {t('hero.mission')}
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
-                            <Link to="/contact" className="w-full sm:w-auto px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-full font-bold transition-all shadow-xl hover:shadow-primary-600/50 flex items-center justify-center gap-2 group text-base md:text-lg">
+                        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center px-4">
+                            <Link to="/contact" className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-full font-bold transition-all shadow-xl hover:shadow-primary-600/50 flex items-center justify-center gap-2 group text-sm md:text-base">
                                  {t('hero.cta')} 
-                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                             </Link>
                              <button 
                                 onClick={() => setShowNotification(true)}
-                                className="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 rounded-full font-bold transition-all text-base md:text-lg"
+                                className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 rounded-full font-bold transition-all text-sm md:text-base"
                              >
                              {t('hero.learnMore')}
                             </button>
@@ -83,10 +83,10 @@ const Home: React.FC = () => {
                 <motion.div 
                     animate={{ y: [0, 10, 0] }}
                     transition={{ repeat: Infinity, duration: 1.5 }}
-                    className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/70 z-20 flex flex-col items-center gap-2"
+                    className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 text-white/70 z-20 flex flex-col items-center gap-2"
                 >
                     <span className="text-xs uppercase tracking-widest opacity-70">{t('hero.scroll')}</span>
-                    <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
+                    <div className="w-[1px] h-8 md:h-12 bg-gradient-to-b from-white to-transparent"></div>
                 </motion.div>
             </section>
 
