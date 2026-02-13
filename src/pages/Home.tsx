@@ -28,7 +28,7 @@ const Home: React.FC = () => {
                 onClose={() => setShowNotification(false)}
             />
             {/* Hero Section */}
-            <section className="relative h-[85vh] md:h-[60vh] lg:h-[85vh] flex items-center justify-center text-white overflow-hidden perspective-1000">
+            <section className="relative h-[85vh] md:h-[55vh] lg:h-[75vh] xl:h-[85vh] flex items-center justify-center text-white overflow-hidden perspective-1000">
                 <motion.div 
                     style={{ y: y1 }}
                     className="absolute inset-0 z-0"
@@ -48,20 +48,20 @@ const Home: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         style={{ opacity }}
-                        className="max-w-4xl mx-auto backdrop-blur-sm bg-white/5 p-6 md:p-8 rounded-3xl border border-white/10 shadow-2xl"
+                        className="max-w-4xl mx-auto backdrop-blur-sm bg-white/5 p-4 md:p-6 lg:p-8 rounded-3xl border border-white/10 shadow-2xl"
                     >
                         <motion.span 
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.2 }}
-                            className="inline-block py-1 px-3 rounded-full bg-primary-500/20 border border-primary-400/30 text-primary-200 text-xs md:text-sm font-semibold mb-4 md:mb-6 tracking-wider uppercase"
+                            className="inline-block py-1 px-3 rounded-full bg-primary-500/20 border border-primary-400/30 text-primary-200 text-xs md:text-sm font-semibold mb-3 md:mb-4 lg:mb-6 tracking-wider uppercase"
                         >
                             Dakhla-Oued Eddahab
                         </motion.span>
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold mb-4 md:mb-6 leading-tight tracking-tight drop-shadow-lg px-4">
+                        <h1 className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-heading font-bold mb-3 md:mb-4 lg:mb-6 leading-tight tracking-tight drop-shadow-lg px-4">
                             {t('hero.title')}
                         </h1>
-                        <p className="text-base md:text-lg lg:text-xl text-gray-200 mb-6 md:mb-8 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md px-4">
+                        <p className="text-base md:text-base lg:text-xl text-gray-200 mb-4 md:mb-6 lg:mb-8 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md px-4">
                             {t('hero.mission')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center px-4">
@@ -79,19 +79,10 @@ const Home: React.FC = () => {
                     </motion.div>
                 </div>
 
-                {/* Scroll Indicator */}
-                <motion.div 
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 1.5 }}
-                    className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 text-white/70 z-20 flex flex-col items-center gap-2"
-                >
-                    <span className="text-xs uppercase tracking-widest opacity-70">{t('hero.scroll')}</span>
-                    <div className="w-[1px] h-8 md:h-12 bg-gradient-to-b from-white to-transparent"></div>
-                </motion.div>
             </section>
 
              {/* Stats Section with Floating Design */}
-             <div className="relative z-30 -mt-16 md:-mt-12 lg:-mt-20 container mx-auto px-4 md:px-6">
+             <div className="relative z-30 -mt-16 md:-mt-10 lg:-mt-16 xl:-mt-20 container mx-auto px-4 md:px-6">
                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 bg-white/90 backdrop-blur-lg rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100">
                     {stats.map((stat, idx) => (
                         <div key={idx} className="flex flex-col items-center justify-center text-center p-4">
