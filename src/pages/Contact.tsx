@@ -17,7 +17,7 @@ const Contact = () => {
                 onClose={() => setShowNotification(false)}
             />
             {/* Hero Section */}
-            <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-white overflow-hidden">
+            <section className="relative h-[60vh] md:h-[50vh] lg:h-[70vh] flex items-center justify-center text-white overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-gradient-to-b from-accent/70 via-accent/50 to-accent/70 z-10"></div>
                     <img 
@@ -48,7 +48,7 @@ const Contact = () => {
             {/* Content Section */}
             <div className="bg-nature-sand/30 py-12 sm:py-16 lg:py-20">
 
-            <div className="container mx-auto px-4 md:px-6 py-12 md:py-20 relative z-30 -mt-20">
+            <div className="container mx-auto px-4 md:px-6 py-12 md:py-20 relative z-30 -mt-16 md:-mt-12 lg:-mt-20">
                 <div className="grid lg:grid-cols-2 gap-8 md:gap-16 max-w-6xl mx-auto">
                     {/* Contact Info */}
                     <motion.div 

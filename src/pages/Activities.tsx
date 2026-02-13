@@ -303,7 +303,7 @@ const Activities = () => {
             </AnimatePresence>
 
             {/* Hero Section */}
-            <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-white overflow-hidden">
+            <section className="relative h-[60vh] md:h-[50vh] lg:h-[70vh] flex items-center justify-center text-white overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-gradient-to-b from-secondary-900/70 via-secondary-900/50 to-secondary-900/70 z-10"></div>
                     <img 

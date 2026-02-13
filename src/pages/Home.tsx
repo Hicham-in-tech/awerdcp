@@ -28,7 +28,7 @@ const Home: React.FC = () => {
                 onClose={() => setShowNotification(false)}
             />
             {/* Hero Section */}
-            <section className="relative h-[85vh] md:h-[90vh] flex items-center justify-center text-white overflow-hidden perspective-1000">
+            <section className="relative h-[85vh] md:h-[60vh] lg:h-[85vh] flex items-center justify-center text-white overflow-hidden perspective-1000">
                 <motion.div 
                     style={{ y: y1 }}
                     className="absolute inset-0 z-0"
@@ -91,7 +91,7 @@ const Home: React.FC = () => {
             </section>
 
              {/* Stats Section with Floating Design */}
-             <div className="relative z-30 -mt-20 container mx-auto px-4 md:px-6">
+             <div className="relative z-30 -mt-16 md:-mt-12 lg:-mt-20 container mx-auto px-4 md:px-6">
                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 bg-white/90 backdrop-blur-lg rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100">
                     {stats.map((stat, idx) => (
                         <div key={idx} className="flex flex-col items-center justify-center text-center p-4">

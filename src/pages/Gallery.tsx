@@ -70,7 +70,7 @@ const Gallery = () => {
     return (
         <div className="min-h-screen bg-nature-light/10">
             {/* Hero Section */}
-            <section className="relative h-[40vh] md:h-[50vh] flex items-center justify-center text-white overflow-hidden">
+            <section className="relative h-[40vh] md:h-[45vh] lg:h-[50vh] flex items-center justify-center text-white overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-gradient-to-b from-primary-900/90 via-primary-900/80 to-nature-light/10 z-10"></div>
                     <img 
@@ -94,7 +94,7 @@ const Gallery = () => {
             </section>
 
             {/* Featured Slider 3D Section */}
-            <div className="relative -mt-20 md:-mt-32 pb-16 md:pb-24 z-30">
+            <div className="relative -mt-16 md:-mt-20 lg:-mt-32 pb-16 md:pb-24 z-30">
                 <div className="container mx-auto px-4">
                     <div className="max-w-6xl mx-auto">
                         <div className="relative aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-2xl bg-gray-900 border-2 md:border-4 border-white group/slider">
