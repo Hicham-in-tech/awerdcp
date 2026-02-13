@@ -1,0 +1,221 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "activities": "Activités",
+    "news": "Actualités",
+    "gallery": "Galerie",
+    "partners": "Partenaires",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Association Eau et Environnement",
+    "subtitle": "Pour la Recherche et le Développement et la Protection du Consommateur",
+    "mission": "Dédiée à la recherche scientifique sur l'eau et l'environnement, à la gestion durable des ressources et à la protection des consommateurs dans la région de Dakhla-Oued Eddahab.",
+    "cta": "Nos Activités",
+    "donate": "Contactez-nous",
+    "learnMore": "En Savoir Plus",
+    "scroll": "Défiler"
+  },
+  "notification": {
+    "message": "En cours de développement",
+    "submessage": "Cette fonctionnalité est en cours de développement. Revenez bientôt !"
+  },
+  "stats": {
+    "members": "Membres de la communauté",
+    "cleanups": "Campagnes de nettoyage",
+    "water": "Projets hydrauliques",
+    "policy": "Avancées politiques"
+  },
+  "pillars": {
+    "title": "Nos Piliers Fondamentaux",
+    "description": "Nous agissons à l'intersection de la préservation environnementale, de la recherche scientifique et de la défense des droits des consommateurs.",
+    "consumer": {
+      "title": "Protection du Consommateur",
+      "desc": "Défendre les droits des consommateurs par l'éducation, le plaidoyer juridique et la surveillance du marché."
+    },
+    "environment": {
+      "title": "Protection de l'Environnement",
+      "desc": "Plantation d'arbres, nettoyage des plages et initiatives de gestion des déchets pour protéger notre écosystème."
+    },
+    "research": {
+      "title": "Recherche & Développement",
+      "desc": "Études scientifiques sur la rareté de l'eau, l'impact du dessalement et l'agriculture durable."
+    }
+  },
+  "vision": {
+    "label": "Notre Vision",
+    "title": "Un Avenir Durable pour",
+    "highlight": "Dakhla",
+    "description": "Nous croyons en une approche holistique où la protection de l'environnement va de pair avec le développement social. Nos projets sont conçus pour créer un impact durable, en autonomisant les communautés locales tout en préservant nos précieuses ressources naturelles.",
+    "check1": "Autonomisation des communautés",
+    "check2": "Gestion durable de l'eau",
+    "check3": "Éducation de la jeunesse"
+  },
+  "trustedPartners": "Nos Partenaires de Confiance",
+  "partnerLabel": "PARTENAIRE",
+  "about": {
+    "title": "Qui Sommes-Nous",
+    "badge": "Qui Sommes-Nous",
+    "heroSubtitle": "Dédiée à la protection de l'environnement et à la recherche scientifique à Dakhla-Oued Eddahab",
+    "whoWeAre": "Qui Sommes-Nous",
+    "description1": "L'<strong>Association Eau et Environnement pour la Recherche et le Développement et la Protection du Consommateur (AWERDCP)</strong> est une organisation non gouvernementale basée à Dakhla, au Maroc. Nous sommes dédiés à l'étude scientifique des ressources en eau, à la conservation de l'environnement et à la protection des droits des consommateurs.",
+    "description2": "Notre mission fait le lien entre la recherche scientifique et l'action communautaire, assurant un avenir durable pour la région de Dakhla-Oued Eddahab.",
+    "objectivesTitle": "Nos Objectifs Stratégiques",
+    "obj1": "Mener des études scientifiques et des recherches de terrain sur l'eau et l'environnement.",
+    "obj2": "Conserver les ressources en eau et protéger l'environnement.",
+    "obj3": "Sensibiliser les consommateurs à la qualité des produits, à la santé et à la sécurité.",
+    "obj4": "Guider les consommateurs sur la qualité alimentaire, notamment les produits marins.",
+    "obj5": "Recevoir et résoudre les plaintes des consommateurs en coordination avec les autorités.",
+    "obj6": "Publier les résultats de recherche pour guider les choix des consommateurs.",
+    "obj7": "Organiser des ateliers de sensibilisation et des séminaires éducatifs.",
+    "obj8": "Participer aux forums nationaux et internationaux sur la protection de l'environnement.",
+    "obj9": "Soutenir les organismes gouvernementaux dans l'établissement de normes et la surveillance du marché.",
+    "obj10": "Construire des partenariats avec des entités publiques et privées partageant les mêmes objectifs.",
+    "joinTitle": "Rejoignez Notre Mission",
+    "joinDescription": "Nous accueillons les partenariats avec les entités publiques et privées pour atteindre des objectifs environnementaux communs.",
+    "becomePartner": "Devenir Partenaire",
+    "teamLabel": "Notre Équipe",
+    "boardTitle": "Bureau Exécutif",
+    "president": "Présidente",
+    "generalSecretary": "Secrétaire Générale",
+    "treasurer": "Trésorier",
+    "presidentTitle": "Doctorat en Hydrogéologie",
+    "secretaryTitle": "Doctorat en Biochimie",
+    "treasurerTitle": "Technicien / Plongeur",
+    "presidentDesc": "Professeur universitaire spécialisée en ressources hydriques.",
+    "secretaryDesc": "Chercheuse à l'Institut National de Recherche Halieutique (INRH).",
+    "treasurerDesc": "Spécialiste à l'Institut National de Recherche Halieutique (INRH).",
+    "vision": "Être un leader dans la gestion environnementale et la défense des consommateurs.",
+    "mission": "Mener des recherches sur le terrain, sensibiliser à l'environnement et protéger la santé des consommateurs par des conseils scientifiques et des actions communautaires."
+  },
+  "activities": {
+    "badge": "Temps Forts 2024",
+    "heroSubtitle": "S'engager avec la communauté à travers l'éducation, la recherche scientifique et l'action directe sur le terrain",
+    "viewDetails": "Voir les Détails",
+    "act1": {
+      "title": "Séminaire sur la Gestion Intégrée de l'Eau",
+      "date": "15 mai 2024",
+      "location": "Chambre d'Agriculture, Dakhla",
+      "category": "Recherche Scientifique",
+      "desc": "Séminaire scientifique sur le stress hydrique dans les régions arides, avec des experts de l'Agence du Bassin Hydraulique et du milieu universitaire. Les recommandations clés incluaient la création d'un réseau d'ONG et la révision des coûts de l'eau."
+    },
+    "act2": {
+      "title": "Formation Écoles Écologiques",
+      "date": "27-28 fév. 2024",
+      "location": "Dakhla",
+      "category": "Éducation",
+      "desc": "Formation de l'Académie Régionale où l'AWERDCP a présenté 'Stress Hydrique et Contraintes de Gestion'. Dans le cadre de l'initiative de la Fondation Mohammed VI pour la Protection de l'Environnement."
+    },
+    "act3": {
+      "title": "Mon Jardin, Ma Responsabilité",
+      "date": "25 janv. 2024",
+      "location": "École Abdellah Ould Bahia",
+      "category": "Action Communautaire",
+      "desc": "Atelier de sensibilisation environnementale pour les élèves incluant la plantation d'arbres et des présentations éducatives, en partenariat avec l'Association Al-Rayan."
+    },
+    "act4": {
+      "title": "Recyclage des Déchets et Compostage",
+      "date": "22 janv. 2024",
+      "location": "Agadir",
+      "category": "Recherche de Terrain",
+      "desc": "Séminaire et visite de terrain d'une décharge contrôlée avec des étudiants en Master de Géomatique de Taroudant. Présentation des résultats sur le recyclage des déchets solides par compostage."
+    },
+    "act5": {
+      "title": "Cartographie des Aliments Traditionnels",
+      "date": "2024",
+      "location": "Amman, Jordanie",
+      "category": "International",
+      "desc": "Dr. Aicha Saad a présenté 'L'Expérience Marocaine dans la Cartographie et la Documentation du Patrimoine Alimentaire' lors de la conférence régionale."
+    }
+  },
+  "news": {
+    "badge": "Dernières Nouvelles",
+    "heroSubtitle": "Restez informé de nos dernières initiatives et actualités environnementales",
+    "readFullStory": "Lire l'Article Complet",
+    "loremDesc": "Restez informé de nos dernières actions et initiatives communautaires. Découvrez comment nous créons un impact positif.",
+    "news1": {
+      "title": "Nouveau Partenariat Annoncé avec les Écoles Locales",
+      "date": "10 fév. 2024",
+      "type": "Partenariat"
+    },
+    "news2": {
+      "title": "Campagne de Nettoyage Communautaire : Participation Massive",
+      "date": "15 janv. 2024",
+      "type": "Événement"
+    },
+    "news3": {
+      "title": "Points Forts du Séminaire sur la Conservation de l'Eau",
+      "date": "05 déc. 2023",
+      "type": "Rapport"
+    }
+  },
+  "gallery": {
+    "featured": "En Vedette",
+    "sliderDesc": "Découvrez nos initiatives environnementales à travers ces moments capturés.",
+    "exploreCollection": "Explorer la Collection Complète",
+    "hideCollection": "Masquer la Collection",
+    "allPhotos": "Toutes les Photos",
+    "img0": "Rassemblement Communautaire sur le Terrain",
+    "img1": "Réunion de Planification Stratégique",
+    "img2": "Visite de Partenariat Institutionnel",
+    "img3": "Session de Discussion Officielle",
+    "img4": "Réunion d'Équipe Collaborative",
+    "img5": "Dialogue de Coordination de Projet",
+    "img6": "Engagement sur le Terrain avec les Bénéficiaires",
+    "img7": "Atelier Éducatif en Action",
+    "img8": "Activité de Sensibilisation Agricole",
+    "img9": "Initiative Communautaire en Plein Air",
+    "img10": "Présentation de Session de Formation",
+    "img11": "Autonomisation et Esprit d'Équipe",
+    "img12": "Environnement d'Apprentissage en Classe",
+    "img13": "Programme d'Engagement de la Jeunesse",
+    "img14": "Vitrine des Résultats du Projet",
+    "img15": "Réalisation Collective sur le Terrain",
+    "img16": "Conférence et Partage de Connaissances",
+    "img17": "Photo de Groupe de la Cérémonie de Clôture"
+  },
+  "contact": {
+    "badge": "Contactez-Nous",
+    "heroSubtitle": "Vous avez des questions sur nos projets ou souhaitez vous impliquer ? Nous serions ravis de vous entendre",
+    "visitUs": "Rendez-nous Visite",
+    "address": "Région Dakhla-Oued Eddahab",
+    "country": "Maroc",
+    "contactForAppointments": "Contactez-nous pour un rendez-vous",
+    "emailUs": "Écrivez-nous",
+    "callUs": "Appelez-nous",
+    "contactViaEmail": "Contactez par e-mail",
+    "forInquiries": "Pour les demandes et partenariats",
+    "sendMessage": "Envoyez-nous un Message",
+    "fullName": "Nom Complet",
+    "email": "E-mail",
+    "subject": "Objet",
+    "message": "Message",
+    "namePlaceholder": "Jean Dupont",
+    "emailPlaceholder": "jean@exemple.com",
+    "subjectPlaceholder": "Comment pouvons-nous vous aider ?",
+    "messagePlaceholder": "Dites-nous en plus sur votre demande...",
+    "sendButton": "Envoyer le Message"
+  },
+  "partners": {
+    "badge": "Collaboration",
+    "heroSubtitle": "Nous collaborons avec des organisations de premier plan pour amplifier notre impact",
+    "logo": "Logo",
+    "partnerName": "Partenaire",
+    "strategicAlliance": "Alliance Stratégique"
+  },
+  "footer": {
+    "description": "Association Eau et Environnement pour la Recherche et le Développement et la Protection du Consommateur. Dédiée à un avenir durable pour Dakhla-Oued Eddahab.",
+    "quickNav": "Navigation Rapide",
+    "aboutUs": "À Propos de Nous",
+    "ourActivities": "Nos Activités",
+    "newsEvents": "Actualités & Événements",
+    "contactUs": "Contactez-Nous",
+    "newsletter": "Bulletin d'Information",
+    "newsletterDesc": "Abonnez-vous pour recevoir les mises à jour sur nos dernières initiatives environnementales.",
+    "emailPlaceholder": "Votre e-mail",
+    "privacyPolicy": "Politique de Confidentialité",
+    "termsOfService": "Conditions d'Utilisation",
+    "rights": "© 2024 AWERDCP. Tous droits réservés."
+  }
+}

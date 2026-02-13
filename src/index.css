@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 160 14% 96%; /* #F4F7F6 Soft Light */
+    --foreground: 210 29% 24%; /* #2C3E50 Charcoal */
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 29% 24%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 29% 24%;
+
+    --primary: 216 100% 25%; /* #003380 Deep Navy */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 88 61% 45%; /* #76B82D Leaf Green */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 10% 40%;
+
+    --accent: 204 70% 63%; /* #5DADE2 Sky Blue */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 15% 85%;
+    --input: 210 15% 85%;
+    --ring: 216 100% 25%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 216 50% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 216 50% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 216 47% 9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 216 100% 40%;
+    --primary-foreground: 0 0% 98%;
+    /* ... other dark mode adjustments if needed */
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+ 
+  /* Apply base font for non-RTL */
+  html:not([dir='rtl']) body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  html:not([dir='rtl']) h1, 
+  html:not([dir='rtl']) h2, 
+  html:not([dir='rtl']) h3, 
+  html:not([dir='rtl']) h4, 
+  html:not([dir='rtl']) h5, 
+  html:not([dir='rtl']) h6 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Apply Arabic font for RTL */
+  html[dir='rtl'] body, 
+  html[dir='rtl'] h1, 
+  html[dir='rtl'] h2 {
+    font-family: 'Noto Sans Arabic', sans-serif;
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "activities": "Activities",
+    "news": "News",
+    "gallery": "Gallery",
+    "partners": "Partners",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Association of Water & Environment",
+    "subtitle": "Research & Development and Consumer Protection",
+    "mission": "Dedicated to scientific research on water and environment, sustainable resource management, and consumer protection in the Dakhla-Oued Eddahab region.",
+    "cta": "Our Activities",
+    "donate": "Contact Us",
+    "learnMore": "Learn More",
+    "scroll": "Scroll"
+  },
+  "notification": {
+    "message": "Under Development",
+    "submessage": "This feature is under development. Check back soon!"
+  },
+  "stats": {
+    "members": "Community Members",
+    "cleanups": "Clean-up Drives",
+    "water": "Water Projects",
+    "policy": "Policy Wins"
+  },
+  "pillars": {
+    "title": "Our Core Pillars",
+    "description": "We operate at the intersection of environmental preservation, scientific research, and consumer rights advocacy.",
+    "consumer": {
+      "title": "Consumer Protection",
+      "desc": "Championing consumer rights through education, legal advocacy, and market monitoring."
+    },
+    "environment": {
+      "title": "Environmental Care",
+      "desc": "Tree planting, beach cleanups, and waste management initiatives to protect our ecosystem."
+    },
+    "research": {
+      "title": "Research & Development",
+      "desc": "Scientific studies on water scarcity, desalination impact, and sustainable agriculture."
+    }
+  },
+  "vision": {
+    "label": "Our Vision",
+    "title": "A Sustainable Future for",
+    "highlight": "Dakhla",
+    "description": "We believe in a holistic approach where environmental protection goes hand in hand with social development. Our projects are designed to create lasting impact, empowering local communities while preserving our precious natural resources.",
+    "check1": "Community Empowerment",
+    "check2": "Sustainable Water Management",
+    "check3": "Youth Education"
+  },
+  "trustedPartners": "Our Trusted Partners",
+  "partnerLabel": "PARTNER",
+  "about": {
+    "title": "Who We Are",
+    "badge": "Who We Are",
+    "heroSubtitle": "Dedicated to environmental protection and scientific research in Dakhla-Oued Eddahab",
+    "whoWeAre": "Who We Are",
+    "description1": "The <strong>Association of Water & Environment for Research & Development and Consumer Protection (AWERDCP)</strong> is a non-governmental organization based in Dakhla, Morocco. We are dedicated to the scientific study of water resources, environmental conservation, and the protection of consumer rights.",
+    "description2": "Our mission bridges the gap between scientific research and community action, ensuring a sustainable future for the Dakhla-Oued Eddahab region.",
+    "objectivesTitle": "Our Strategic Objectives",
+    "obj1": "Conduct scientific studies and field research on water and the environment.",
+    "obj2": "Conserve water resources and protect the environment.",
+    "obj3": "Raise consumer awareness regarding product quality, health, and safety.",
+    "obj4": "Guide consumers on food suitability, especially marine products.",
+    "obj5": "Receive and resolve consumer complaints in coordination with authorities.",
+    "obj6": "Publish research findings to guide consumer choices.",
+    "obj7": "Conduct awareness workshops and educational seminars.",
+    "obj8": "Participate in national and international forums on environment protection.",
+    "obj9": "Support government bodies in standards setting and market monitoring.",
+    "obj10": "Build partnerships with public and private entities with shared goals.",
+    "joinTitle": "Join Our Mission",
+    "joinDescription": "We welcome partnerships with public and private entities to achieve common environmental goals.",
+    "becomePartner": "Become a Partner",
+    "teamLabel": "Our Team",
+    "boardTitle": "Executive Board",
+    "president": "President",
+    "generalSecretary": "General Secretary",
+    "treasurer": "Treasurer",
+    "presidentTitle": "PhD in Hydrogeology",
+    "secretaryTitle": "PhD in Biochemistry",
+    "treasurerTitle": "Technician / Diver",
+    "presidentDesc": "University Professor specializing in water resources.",
+    "secretaryDesc": "Researcher at the National Institute of Fisheries Research (INRH).",
+    "treasurerDesc": "Specialist at the National Institute of Fisheries Research (INRH).",
+    "vision": "Leading the way in environmental stewardship and consumer advocacy.",
+    "mission": "Conducting field research, raising environmental awareness, and protecting consumer health through scientific guidance and community action."
+  },
+  "activities": {
+    "badge": "2024 Highlights",
+    "heroSubtitle": "Engaging with the community through education, scientific research, and direct field action",
+    "viewDetails": "View Details",
+    "act1": {
+      "title": "My Garden – My Responsibility",
+      "date": "Saturday, 25 January 2024",
+      "location": "Abdellah Ould Bahia Primary School",
+      "category": "Workshop",
+      "desc": "Environmental awareness workshop targeting school children.",
+      "details": {
+        "description": "The association organized an environmental awareness workshop targeting school children.",
+        "objectives": [
+          "Promote environmental awareness among young students",
+          "Encourage positive environmental habits",
+          "Develop responsibility towards protecting nature"
+        ],
+        "partners": [
+          "Association Al Rayane for Women's Development",
+          "Abdellah Ould Bahia Primary School"
+        ],
+        "actions": [
+          "Presentation on environmental awareness",
+          "Participation in tree planting inside the school garden"
+        ]
+      }
+    },
+    "act2": {
+      "title": "Training Workshop for Eco-Schools",
+      "date": "27–28 February 2024",
+      "location": "Dakhla",
+      "category": "Training",
+      "desc": "Presentation on water stress crisis and management challenges.",
+      "details": {
+        "description": "The association delivered a presentation on water stress crisis in Morocco and challenges of water management in Dakhla-Oued Eddahab region.",
+        "organizers": [
+          "Mohammed VI Foundation for Environmental Protection",
+          "Regional Academy of Education and Training"
+        ],
+        "objectives": [
+          "Raise awareness about water scarcity",
+          "Discuss sustainable water management solutions",
+          "Encourage responsible water consumption"
+        ]
+      }
+    },
+    "act3": {
+      "title": "Integrated Water Management in Facing Water Stress",
+      "date": "Wednesday, 15 May 2024",
+      "location": "Agricultural Chamber Conference Hall – Dakhla",
+      "category": "Conference",
+      "desc": "Scientific conference on water management challenges and solutions.",
+      "details": {
+        "objectives": [
+          "Exchange experiences regarding water stress crisis",
+          "Discuss water management challenges in the region",
+          "Present successful practices in water conservation",
+          "Develop recommendations"
+        ],
+        "partners": [
+          "Agricultural Chamber of Dakhla-Oued Eddahab",
+          "Kasr Touareg Hotel",
+          "King Pelagic Foundation"
+        ],
+        "keyPoints": [
+          "Morocco has faced 7 consecutive years of drought",
+          "Rainfall deficit reached approximately 50% nationally"
+        ],
+        "recommendations": [
+          "Create a regional network of environmental associations",
+          "Review pricing and monitoring of water consumption by large companies",
+          "Urgent maintenance of drinking water and sanitation infrastructure in Dakhla"
+        ]
+      }
+    },
+    "act4": {
+      "title": "Conference on Waste Recycling & Field Visit",
+      "date": "22 January 2024",
+      "location": "Agadir",
+      "category": "Field Visit",
+      "desc": "Conference on recycling importance and field visit to Agadir landfill.",
+      "details": {
+        "description": "Organization of a conference on the importance of recycling and a field visit to the controlled landfill in Agadir.",
+        "partners": [
+          "Master’s Students in Geomatics Applied to Natural Resource Management",
+          "Faculty of Taroudant"
+        ],
+        "project": "Solid waste recycling using Composting technique",
+        "composting": [
+          "An aerobic biological process",
+          "Transforms organic waste (food scraps, leaves) into natural fertilizer",
+          "Requires carbon-rich and nitrogen-rich materials",
+          "Needs aeration, moisture and regular turning"
+        ],
+        "impact": [
+          "Waste reduction",
+          "Soil enrichment",
+          "Promotion of sustainable practices"
+        ]
+      }
+    },
+    "act5": {
+      "title": "Mapping Traditional Foods in the Arab Region",
+      "date": "2024",
+      "location": "Amman",
+      "category": "International",
+      "desc": "International participation by Dr. Aicha SAAD on traditional food documentation.",
+      "details": {
+        "participant": "Dr. Aicha SAAD (President of the Association)",
+        "presentation": "\"The Moroccan Experience in Mapping and Documenting Traditional Food\"",
+        "theme": "Mapping Traditional Foods in the Arab Region"
+      }
+    }   
+  },
+  "news": {
+    "badge": "Latest Updates",
+    "heroSubtitle": "Stay informed about our latest initiatives and environmental news",
+    "readFullStory": "Read Full Story",
+    "loremDesc": "Stay up to date with our latest developments and community actions. Read more about how we are making a positive impact.",
+    "news1": {
+      "title": "New Partnership Announced with Local Schools",
+      "date": "Feb 10, 2024",
+      "type": "Partnership"
+    },
+    "news2": {
+      "title": "Community Cleanup Drive: Massive Turnout",
+      "date": "Jan 15, 2024",
+      "type": "Event"
+    },
+    "news3": {
+      "title": "Water Conservation Seminar Highlights",
+      "date": "Dec 05, 2023",
+      "type": "Report"
+    }
+  },
+  "gallery": {
+    "featured": "Featured",
+    "sliderDesc": "Discover our environmental initiatives through these captured moments.",
+    "exploreCollection": "Explore Full Collection",
+    "hideCollection": "Hide Collection",
+    "allPhotos": "All Photos",
+    "img0": "Community Gathering in the Field",
+    "img1": "Strategic Planning Meeting",
+    "img2": "Institutional Partnership Visit",
+    "img3": "Official Discussion Session",
+    "img4": "Collaborative Team Meeting",
+    "img5": "Project Coordination Dialogue",
+    "img6": "Field Engagement with Beneficiaries",
+    "img7": "Educational Workshop in Action",
+    "img8": "Agricultural Awareness Activity",
+    "img9": "Outdoor Community Initiative",
+    "img10": "Training Session Presentation",
+    "img11": "Empowerment and Team Spirit",
+    "img12": "Classroom Learning Environment",
+    "img13": "Youth Engagement Program",
+    "img14": "Project Results Showcase",
+    "img15": "Collective Field Achievement",
+    "img16": "Conference and Knowledge Sharing",
+    "img17": "Closing Ceremony Group Photo"
+  },
+  "contact": {
+    "badge": "Get in Touch",
+    "heroSubtitle": "Have questions about our projects or want to get involved? We'd love to hear from you",
+    "visitUs": "Visit Us",
+    "address": "Dakhla-Oued Eddahab Region",
+    "country": "Morocco",
+    "contactForAppointments": "Contact us for appointments",
+    "emailUs": "Email Us",
+    "callUs": "Call Us",
+    "contactViaEmail": "Contact via email",
+    "forInquiries": "For inquiries and partnerships",
+    "sendMessage": "Send us a Message",
+    "fullName": "Full Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "namePlaceholder": "John Doe",
+    "emailPlaceholder": "john@example.com",
+    "subjectPlaceholder": "How can we help?",
+    "messagePlaceholder": "Tell us more about your inquiry...",
+    "sendButton": "Send Message"
+  },
+  "partners": {
+    "badge": "Collaboration",
+    "heroSubtitle": "We collaborate with leading organizations to amplify our impact",
+    "logo": "Logo",
+    "partnerName": "Partner",
+    "strategicAlliance": "Strategic Alliance"
+  },
+  "footer": {
+    "description": "Association of Water & Environment for Research & Development and Consumer Protection. Dedicated to a sustainable future for Dakhla-Oued Eddahab.",
+    "quickNav": "Quick Navigation",
+    "aboutUs": "About Us",
+    "ourActivities": "Our Activities",
+    "newsEvents": "News & Events",
+    "contactUs": "Contact Us",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Subscribe to receive updates on our latest environmental initiatives.",
+    "emailPlaceholder": "Your email",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "rights": "© 2024 AWERDCP. All rights reserved."
+  }
+}

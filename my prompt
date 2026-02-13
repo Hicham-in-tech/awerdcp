@@ -1,0 +1,140 @@
+You are a senior React architect and UI/UX expert.
+
+I want you to build a complete professional NGO website from scratch using React.
+
+Project Name:
+AWERDCP – Association of Water & Environment for Research & Development and Consumer Protection
+
+Arabic:
+جمعية الماء والبيئة للبحث والتنمية وحماية المستهلك
+
+French:
+Association Eau et Environnement pour la Recherche et le Développement et la Protection du Consommateur
+
+Location:
+Dakhla-Oued Eddahab, Morocco
+
+IMPORTANT:
+This is a FRONTEND ONLY project.
+No backend.
+No database.
+Static website for now.
+But architecture must be scalable for future backend integration.
+
+---------------------------------------------------
+
+TECH STACK:
+
+- React (Vite)
+- TypeScript
+- TailwindCSS
+- React Router
+- i18next (for multilingual)
+- Framer Motion (subtle animations)
+- Lucide React icons
+
+---------------------------------------------------
+
+LANGUAGES:
+
+The website must support:
+
+- English
+- French
+- Arabic (RTL fully supported)
+
+Implement full i18n structure.
+Arabic must be fully RTL optimized.
+
+---------------------------------------------------
+
+WEBSITE STRUCTURE:
+
+1) Home Page
+   - Modern hero section with mission statement
+   - Call-to-action buttons
+   - Animated statistics section
+   - Featured activities
+   - Partners logos
+   - News preview
+   - Strong NGO style footer
+
+2) About Page
+   - Who We Are
+   - Vision
+   - Mission
+   - Objectives
+   - President (Dr. Aicha SAAD)
+   - Region info
+
+3) Activities Page
+   Include sections for:
+   - Environmental awareness workshops
+   - Water stress conferences
+   - Recycling initiatives
+   - Ecological schools program
+   - Scientific seminars
+   - International participation
+
+4) News & Events Page
+
+5) Gallery Page
+   - Images grid
+   - Videos section
+   Media stored in:
+   /assets/images
+   /assets/videos
+
+6) Partners Page
+
+7) Contact Page
+   - Contact form (frontend only)
+   - Address
+   - Social media icons
+   - Embedded map placeholder
+
+---------------------------------------------------
+
+DESIGN REQUIREMENTS:
+
+- High-level international NGO design
+- Clean, modern, premium
+- Blue + Green color palette inspired by environmental theme
+- Soft shadows
+- Rounded cards
+- Elegant typography
+- Clear spacing system
+- Responsive (mobile first)
+- Smooth transitions
+- Sticky navbar with language switcher
+- Professional footer
+
+---------------------------------------------------
+
+ARCHITECTURE REQUIREMENTS:
+
+- Clean folder structure
+- Reusable components
+- Layout component
+- Navbar + Footer separate
+- Shared UI components (Button, Card, Section, Container)
+- Organized translation files
+- Organized assets folder
+
+---------------------------------------------------
+
+DELIVER:
+
+- Complete folder structure
+- Component structure
+- Full code
+- Design system explanation
+- Color palette
+- Typography system
+- Sample content in English
+
+---------------------------------------------------
+
+Build this as if it is for an international organization.
+Make it look powerful, trustworthy, and modern.
+Make it production-ready.
