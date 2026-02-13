@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { CheckCircle2, User, Award, BookOpen } from 'lucide-react';
+import { CheckCircle2, Award, BookOpen } from 'lucide-react';
 import { useState } from 'react';
 import Notification from '../components/Notification';
 

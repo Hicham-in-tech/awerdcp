@@ -7,7 +7,7 @@ import About from './pages/About';
 import Activities from './pages/Activities';
 import News from './pages/News';
 import Gallery from './pages/Gallery';
-import Partners from './pages/Partners';
+// import Partners from './pages/Partners';
 import Contact from './pages/Contact';
 
 function App() {
