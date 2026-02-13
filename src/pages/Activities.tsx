@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, ChevronRight, ChevronUp, MapPin, Users, Target, CheckCircle } from 'lucide-react';
+import { Calendar, ChevronRight, MapPin, Users, Target, CheckCircle } from 'lucide-react';
 import { useState } from 'react';
 import Notification from '../components/Notification';
 
@@ -22,10 +22,16 @@ const itemVariants = {
 const Activities = () => {
     const { t } = useTranslation();
     const [showNotification, setShowNotification] = useState(false);
-    const [expandedId, setExpandedId] = useState<number | null>(null);
+    const [selectedActivity, setSelectedActivity] = useState<any>(null);
 
-    const toggleExpand = (index: number) => {
-        setExpandedId(expandedId === index ? null : index);
+    const openModal = (activity: any) => {
+        setSelectedActivity(activity);
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+        setSelectedActivity(null);
+        document.body.style.overflow = 'unset';
     };
 
     const activities = [
@@ -119,6 +125,183 @@ const Activities = () => {
                 isOpen={showNotification}
                 onClose={() => setShowNotification(false)}
             />
+            
+            {/* Modal Popup */}
+            <AnimatePresence>
+                {selectedActivity && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+                        onClick={closeModal}
+                    >
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                            transition={{ duration: 0.4, type: "spring", damping: 25 }}
+                            className="bg-white rounded-3xl max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            {/* Modal Header */}
+                            <div className="relative p-6 sm:p-8 border-b border-gray-100">
+                                <button
+                                    onClick={closeModal}
+                                    className="absolute top-4 right-4 bg-gray-100 hover:bg-gray-200 rounded-full p-2 transition-all hover:scale-110 shadow-sm z-10"
+                                >
+                                    <svg className="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                                
+                                <div className="flex flex-col-reverse sm:flex-row gap-6 items-start">
+                                    {/* Title and Info on Left */}
+                                    <div className="flex-1 min-w-0 pt-2">
+                                        <div className="inline-block py-1 px-3 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-xs font-bold uppercase tracking-wider mb-3">
+                                            {selectedActivity.category}
+                                        </div>
+                                        <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-3 pr-8">
+                                            {selectedActivity.title}
+                                        </h2>
+                                        <div className="flex items-center gap-3 text-gray-600 text-sm flex-wrap mb-4">
+                                            <span className="flex items-center gap-1">
+                                                <Calendar size={16} className="text-primary-500" />
+                                                {selectedActivity.date}
+                                            </span>
+                                            <span className="text-gray-300">•</span>
+                                            <span className="flex items-center gap-1">
+                                                <MapPin size={16} className="text-primary-500" />
+                                                {selectedActivity.location}
+                                            </span>
+                                        </div>
+                                        <p className="text-gray-600 text-sm leading-relaxed max-w-2xl">
+                                            {selectedActivity.desc}
+                                        </p>
+                                    </div>
+
+                                    {/* Small Image on Right */}
+                                    <div className="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 rounded-2xl overflow-hidden shadow-md border border-gray-100 bg-gray-50 mt-2 sm:mt-0">
+                                        <img 
+                                            src={selectedActivity.image} 
+                                            alt={selectedActivity.title}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Modal Content */}
+                            <div className="overflow-y-auto max-h-[calc(90vh-22rem)] p-6 sm:p-8">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                                    {selectedActivity.details && typeof selectedActivity.details === 'object' && (
+                                        <>
+                                            <div className="space-y-6">
+                                                {(selectedActivity.details as any).description && (
+                                                    <div>
+                                                        <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2 text-sm uppercase tracking-wider">
+                                                            <Target size={16} className="text-primary-500" /> Description
+                                                        </h4>
+                                                        <p className="text-gray-600 text-sm leading-relaxed">{(selectedActivity.details as any).description}</p>
+                                                    </div>
+                                                )}
+                                                {(selectedActivity.details as any).objectives && (
+                                                    <div>
+                                                        <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2 text-sm uppercase tracking-wider">
+                                                            <Target size={16} className="text-primary-500" /> Objectives
+                                                        </h4>
+                                                        {renderList((selectedActivity.details as any).objectives)}
+                                                    </div>
+                                                )}
+                                                {(selectedActivity.details as any).project && (
+                                                    <div>
+                                                        <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2 text-sm uppercase tracking-wider">
+                                                            <Target size={16} className="text-primary-500" /> Project
+                                                        </h4>
+                                                        <p className="text-gray-600 text-sm leading-relaxed">{(selectedActivity.details as any).project}</p>
+                                                    </div>
+                                                )}
+                                                {(selectedActivity.details as any).participant && (
+                                                    <div>
+                                                        <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2 text-sm uppercase tracking-wider">
+                                                            <Users size={16} className="text-primary-500" /> Participant
+                                                        </h4>
+                                                        <p className="text-gray-600 text-sm leading-relaxed">{(selectedActivity.details as any).participant}</p>
+                                                    </div>
+                                                )}
+                                            </div>
+                                            
+                                            <div className="space-y-6">
+                                                {(selectedActivity.details as any).partners && (
+                                                    <div>
+                                                        <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2 text-sm uppercase tracking-wider">
+                                                            <Users size={16} className="text-primary-500" /> Partners
+                                                        </h4>
+                                                        {renderList((selectedActivity.details as any).partners)}
+                                                    </div>
+                                                )}
+                                                {(selectedActivity.details as any).actions && (
+                                                    <div>
+                                                        <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2 text-sm uppercase tracking-wider">
+                                                            <CheckCircle size={16} className="text-primary-500" /> Actions
+                                                        </h4>
+                                                        {renderList((selectedActivity.details as any).actions)}
+                                                    </div>
+                                                )}
+                                                {(selectedActivity.details as any).recommendations && (
+                                                    <div>
+                                                        <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2 text-sm uppercase tracking-wider">
+                                                            <CheckCircle size={16} className="text-primary-500" /> Recommendations
+                                                        </h4>
+                                                        {renderList((selectedActivity.details as any).recommendations)}
+                                                    </div>
+                                                )}
+                                                {(selectedActivity.details as any).presentation && (
+                                                    <div>
+                                                        <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2 text-sm uppercase tracking-wider">
+                                                            <Target size={16} className="text-primary-500" /> Presentation
+                                                        </h4>
+                                                        <p className="text-gray-600 text-sm leading-relaxed">{(selectedActivity.details as any).presentation}</p>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </>
+                                    )}
+                                </div>
+
+                                {/* Gallery in Modal */}
+                                {selectedActivity.galleryImages && selectedActivity.galleryImages.length > 0 && (
+                                    <div className="bg-gray-50 rounded-2xl p-6 mt-6">
+                                        <h4 className="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wide flex items-center gap-2">
+                                            <svg className="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                            </svg>
+                                            Activity Gallery
+                                        </h4>
+                                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                                            {selectedActivity.galleryImages.map((imgSrc: string, imgIndex: number) => (
+                                                <div 
+                                                    key={imgIndex} 
+                                                    className="aspect-square rounded-xl bg-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-lg transition-all"
+                                                >
+                                                    <img 
+                                                        src={imgSrc} 
+                                                        alt={`${selectedActivity.title} - Image ${imgIndex + 1}`} 
+                                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                                    />
+                                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             {/* Hero Section */}
             <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-white overflow-hidden">
                 <div className="absolute inset-0 z-0">
@@ -150,178 +333,59 @@ const Activities = () => {
 
             {/* Content Section */}
             <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20 bg-nature-light/20">
-            
-            <motion.div 
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-start"
-            >
-                {activities.map((activity, index) => {
-                    const isExpanded = expandedId === index;
-                    return (
+                <motion.div 
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-start"
+                >
+                    {activities.map((activity, index) => (
                         <motion.div 
                             key={index}
-                            layout
                             variants={itemVariants}
-                            transition={{ layout: { duration: 0.3, type: "spring", stiffness: 300, damping: 30 } }}
-                            className={`group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col ${isExpanded ? 'md:col-span-2 lg:col-span-3' : ''}`}
+                            className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col cursor-pointer"
+                            onClick={() => openModal(activity)}
                         >
-                            <motion.div 
-                                layout 
-                                className={`relative overflow-hidden shrink-0 transition-all duration-500 ease-in-out ${isExpanded ? 'h-64 sm:h-96' : 'h-56'}`}
-                            >
+                            <div className="relative overflow-hidden h-56 shrink-0">
                                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-primary-800 z-10 shadow-sm border border-primary-100">
                                     {activity.category}
                                 </div>
-                                <motion.img 
-                                    layoutId={`image-${index}`}
+                                <img 
                                     src={activity.image} 
                                     alt={activity.title}
-                                    className="w-full h-full object-cover" 
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
-                            </motion.div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                            </div>
                             
-                            <motion.div layout="position" className="p-6 md:p-8 flex flex-col grow">
-                                <motion.div layout="position" className="flex items-center gap-2 text-primary-500 mb-3 text-xs md:text-sm font-medium flex-wrap">
+                            <div className="p-6 md:p-8 flex flex-col grow">
+                                <div className="flex items-center gap-2 text-primary-500 mb-3 text-xs md:text-sm font-medium flex-wrap">
                                     <Calendar size={16} className="shrink-0" />
                                     <span>{activity.date}</span>
                                     <span className="text-gray-300">|</span>
                                     <MapPin size={16} className="shrink-0" />
                                     <span className="text-gray-500 truncate max-w-[200px]">{activity.location}</span>
-                                </motion.div>
+                                </div>
                                 
-                                <motion.h3 layout="position" className="text-2xl md:text-3xl font-bold mb-3 font-heading text-gray-900 leading-tight group-hover:text-primary-700 transition-colors">
+                                <h3 className="text-2xl md:text-3xl font-bold mb-3 font-heading text-gray-900 leading-tight group-hover:text-primary-700 transition-colors">
                                     {activity.title}
-                                </motion.h3>
+                                </h3>
                                 
-                                <motion.p layout="position" className="text-gray-600 mb-6 leading-relaxed text-sm md:text-base">
+                                <p className="text-gray-600 mb-6 leading-relaxed text-sm md:text-base line-clamp-3">
                                     {activity.desc}
-                                </motion.p>
+                                </p>
 
-                                <AnimatePresence mode='wait'>
-                                    {isExpanded && (
-                                        <motion.div
-                                            initial={{ opacity: 0, height: 0 }}
-                                            animate={{ opacity: 1, height: 'auto' }}
-                                            exit={{ opacity: 0, height: 0 }}
-                                            transition={{ duration: 0.4, ease: "easeInOut" }}
-                                            className="overflow-hidden"
-                                        >
-                                            <motion.div 
-                                                initial={{ opacity: 0, y: 10 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                transition={{ delay: 0.2, duration: 0.4 }}
-                                                className="pt-6 border-t border-gray-100"
-                                            >
-                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                                                    {/* Details Columns */}
-                                                    {activity.details && typeof activity.details === 'object' && (
-                                                        <>
-                                                            <div className="space-y-6">
-                                                                {(activity.details as any).description && (
-                                                                    <div>
-                                                                        <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm uppercase tracking-wider"><Target size={16} className="text-primary-500" /> Description</h4>
-                                                                        <p className="text-gray-600 text-sm leading-relaxed">{(activity.details as any).description}</p>
-                                                                    </div>
-                                                                )}
-                                                                {(activity.details as any).objectives && (
-                                                                    <div>
-                                                                        <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm uppercase tracking-wider"><Target size={16} className="text-primary-500" /> Objectives</h4>
-                                                                        {renderList((activity.details as any).objectives)}
-                                                                    </div>
-                                                                )}
-                                                                {(activity.details as any).project && (
-                                                                    <div>
-                                                                        <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm uppercase tracking-wider"><Target size={16} className="text-primary-500" /> Project</h4>
-                                                                        <p className="text-gray-600 text-sm leading-relaxed">{(activity.details as any).project}</p>
-                                                                    </div>
-                                                                )}
-                                                                {(activity.details as any).participant && (
-                                                                    <div>
-                                                                        <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm uppercase tracking-wider"><Users size={16} className="text-primary-500" /> Participant</h4>
-                                                                        <p className="text-gray-600 text-sm leading-relaxed">{(activity.details as any).participant}</p>
-                                                                    </div>
-                                                                )}
-                                                            </div>
-                                                            
-                                                            <div className="space-y-6">
-                                                                {(activity.details as any).partners && (
-                                                                    <div>
-                                                                        <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm uppercase tracking-wider"><Users size={16} className="text-primary-500" /> Partners</h4>
-                                                                        {renderList((activity.details as any).partners)}
-                                                                    </div>
-                                                                )}
-                                                                {(activity.details as any).actions && (
-                                                                    <div>
-                                                                        <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm uppercase tracking-wider"><CheckCircle size={16} className="text-primary-500" /> Actions</h4>
-                                                                        {renderList((activity.details as any).actions)}
-                                                                    </div>
-                                                                )}
-                                                                {(activity.details as any).recommendations && (
-                                                                    <div>
-                                                                        <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm uppercase tracking-wider"><CheckCircle size={16} className="text-primary-500" /> Recommendations</h4>
-                                                                        {renderList((activity.details as any).recommendations)}
-                                                                    </div>
-                                                                )}
-                                                                {(activity.details as any).presentation && (
-                                                                    <div>
-                                                                        <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm uppercase tracking-wider"><Target size={16} className="text-primary-500" /> Presentation</h4>
-                                                                        <p className="text-gray-600 text-sm leading-relaxed">{(activity.details as any).presentation}</p>
-                                                                    </div>
-                                                                )}
-                                                            </div>
-                                                        </>
-                                                    )}
-                                                </div>
-
-                                                {/* Activity Images Section */}
-                                                {activity.galleryImages && activity.galleryImages.length > 0 && (
-                                                    <motion.div 
-                                                        initial={{ opacity: 0, scale: 0.95 }}
-                                                        animate={{ opacity: 1, scale: 1 }}
-                                                        transition={{ delay: 0.3, duration: 0.4 }}
-                                                        className="bg-gray-50 rounded-xl p-6 mb-2"
-                                                    >
-                                                        <h4 className="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wide">Activity Gallery</h4>
-                                                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                                            {activity.galleryImages.map((imgSrc, imgIndex) => (
-                                                                <motion.div 
-                                                                    key={imgIndex} 
-                                                                    whileHover={{ y: -5 }}
-                                                                    className="aspect-square rounded-lg bg-gray-200 overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-md transition-all"
-                                                                >
-                                                                    <img 
-                                                                        src={imgSrc} 
-                                                                        alt={`${activity.title} - Image ${imgIndex + 1}`} 
-                                                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                                                    />
-                                                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
-                                                                </motion.div>
-                                                            ))}
-                                                        </div>
-                                                    </motion.div>
-                                                )}
-                                            </motion.div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-
-                                <motion.button 
-                                    layout="position"
-                                    onClick={() => toggleExpand(index)}
-                                    className="flex items-center gap-2 text-primary-700 font-bold text-sm uppercase tracking-wide hover:text-primary-800 transition-all mt-auto pt-6 border-t border-gray-100 w-full justify-between focus:outline-none"
+                                <button 
+                                    className="flex items-center gap-2 text-primary-700 font-bold text-sm uppercase tracking-wide hover:text-primary-800 transition-all mt-auto pt-6 border-t border-gray-100 w-full justify-between group/btn"
                                 >
-                                    <span className="group-hover:translate-x-1 transition-transform">{isExpanded ? 'Show Less' : t('activities.viewDetails')}</span>
-                                    {isExpanded ? <ChevronUp size={16} /> : <ChevronRight size={16} />}
-                                </motion.button>
-                            </motion.div>
+                                    <span className="group-hover/btn:translate-x-1 transition-transform">{t('activities.viewDetails')}</span>
+                                    <ChevronRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                                </button>
+                            </div>
                         </motion.div>
-                    );
-                })}
-            </motion.div>
-        </div>
+                    ))}
+                </motion.div>
+            </div>
         </div>
     );
 };
