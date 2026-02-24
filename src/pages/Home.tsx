@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Leaf, Droplets, Users, ShieldCheck, ChevronRight } from 'lucide-react';
+import { ArrowRight, Leaf, Droplets, ShieldCheck, ChevronRight, Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Notification from '../components/Notification';
 
@@ -11,13 +11,19 @@ const Home: React.FC = () => {
     const y1 = useTransform(scrollY, [0, 500], [0, 200]);
     const opacity = useTransform(scrollY, [0, 300], [1, 0]);
     const [showNotification, setShowNotification] = useState(false);
+    const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+    const [formSubmitted, setFormSubmitted] = useState(false);
 
-    const stats = [
-        { icon: <Users className="w-6 h-6" />, value: "5000+", label: t('stats.members') },
-        { icon: <Leaf className="w-6 h-6" />, value: "120", label: t('stats.cleanups') },
-        { icon: <Droplets className="w-6 h-6" />, value: "50", label: t('stats.water') },
-        { icon: <ShieldCheck className="w-6 h-6" />, value: "15", label: t('stats.policy') },
-    ];
+    const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
+    const handleFormSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        setFormSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setFormSubmitted(false), 4000);
+    };
 
     return (
         <div className="flex flex-col overflow-hidden">
@@ -81,18 +87,80 @@ const Home: React.FC = () => {
 
             </section>
 
-             {/* Stats Section with Floating Design */}
+             {/* Contact Form Section with Floating Design */}
              <div className="relative z-30 -mt-16 md:-mt-10 lg:-mt-16 xl:-mt-20 container mx-auto px-4 md:px-6">
-                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 bg-white/90 backdrop-blur-lg rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100">
-                    {stats.map((stat, idx) => (
-                        <div key={idx} className="flex flex-col items-center justify-center text-center p-4">
-                            <div className="w-12 h-12 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center mb-3">
-                                {stat.icon}
+                 <div className="bg-white/90 backdrop-blur-lg rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100">
+                    <div className="text-center mb-6">
+                        <h3 className="text-xl md:text-2xl font-heading font-bold text-gray-900">{t('contact.sendMessage')}</h3>
+                    </div>
+                    {formSubmitted ? (
+                        <div className="flex flex-col items-center justify-center py-6 text-primary-600 gap-2">
+                            <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center">
+                                <Send className="w-5 h-5" />
                             </div>
-                            <h4 className="text-2xl md:text-3xl font-bold text-gray-900 font-heading">{stat.value}</h4>
-                            <p className="text-xs md:text-sm text-gray-500 uppercase tracking-wide font-medium">{stat.label}</p>
+                            <p className="font-semibold text-base">{t('contact.sendButton')} ✓</p>
                         </div>
-                    ))}
+                    ) : (
+                        <form onSubmit={handleFormSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div className="flex flex-col gap-1">
+                                <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t('contact.fullName')}</label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleFormChange}
+                                    placeholder={t('contact.namePlaceholder')}
+                                    required
+                                    className="px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-primary-400 bg-white text-gray-800 text-sm transition-colors"
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1">
+                                <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t('contact.email')}</label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleFormChange}
+                                    placeholder={t('contact.emailPlaceholder')}
+                                    required
+                                    className="px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-primary-400 bg-white text-gray-800 text-sm transition-colors"
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1 sm:col-span-2">
+                                <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t('contact.subject')}</label>
+                                <input
+                                    type="text"
+                                    name="subject"
+                                    value={formData.subject}
+                                    onChange={handleFormChange}
+                                    placeholder={t('contact.subjectPlaceholder')}
+                                    required
+                                    className="px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-primary-400 bg-white text-gray-800 text-sm transition-colors"
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1 sm:col-span-2">
+                                <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{t('contact.message')}</label>
+                                <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleFormChange}
+                                    placeholder={t('contact.messagePlaceholder')}
+                                    required
+                                    rows={3}
+                                    className="px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-primary-400 bg-white text-gray-800 text-sm transition-colors resize-none"
+                                />
+                            </div>
+                            <div className="sm:col-span-2 flex justify-end">
+                                <button
+                                    type="submit"
+                                    className="px-6 py-2.5 bg-primary-600 hover:bg-primary-700 text-white rounded-full font-bold text-sm transition-all shadow-md hover:shadow-primary-600/40 flex items-center gap-2 group"
+                                >
+                                    {t('contact.sendButton')}
+                                    <Send className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                                </button>
+                            </div>
+                        </form>
+                    )}
                  </div>
              </div>
 
